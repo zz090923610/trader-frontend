@@ -1,0 +1,296 @@
+<html>
+<head>
+<link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/icon-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendor/icon-line-pro/style.css">
+    <link rel="stylesheet" href="assets/vendor/animate.css">
+
+    <!-- CSS Unify -->
+    <link rel="stylesheet" href="assets/css/unify-core.css">
+    <link rel="stylesheet" href="assets/css/unify-components.css">
+    <link rel="stylesheet" href="assets/css/unify-globals.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <script>
+        var divs = ["mqtt_login", "prelogin", "verify", "trader"];
+        function switch_div(shown) {
+            var div_len = divs.length;
+            for (var i = 0; i < div_len; i++)
+            {
+                if(shown === divs[i])
+                {
+                    document.getElementById(divs[i]).style.display='block';
+                }
+                else
+                {
+                    document.getElementById(divs[i]).style.display='none';
+                }
+
+            }
+        }
+
+        function mqtt_login() {
+            var url = document.getElementById("url").value;
+            var username = document.getElementById("user").value;
+            var password = document.getElementById("passwd").value;
+            var action_grps = [url, username, password];
+            var action_str = action_grps.join("_");
+            console.log(action_str);
+        }
+
+        function get_verify_code() {
+            console.log("ACTION_GET_VERIFY_CODE")
+
+        }
+        function login_with_verify_code() {
+            var v_code = document.getElementById("VCODE").value;
+            console.log("ACTION_SUBMIT_VERIFY_CODE");
+            console.log(v_code);
+        }
+
+        function submit_trade() {
+        var radios = document.getElementsByName('directionRadios');
+        var direction = "None";
+        for (var i = 0, length = radios.length; i < length; i++)
+        {
+            if (radios[i].checked)
+            {
+                // do whatever you want with the checked radio
+                direction = radios[i].value;
+
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+        var symbol = document.getElementById("symbol").value;
+        var price = document.getElementById("price").value;
+        var quantity = document.getElementById("quantity").value;
+        var action_grps = [direction, symbol, price, quantity];
+        var action_str = action_grps.join("_");
+        //alert(action_str);
+        //socket.send("trade/" + action_str);
+
+    }
+    </script>
+</head>
+<body>
+
+<div id="mqtt_login" style="display: block">
+    <a href="#" onclick="return switch_div('prelogin');">Show prelogin</a>
+    <main>
+        <!-- Login -->
+        <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
+            <div class="container g-py-100">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-lg-5">
+                        <div class="u-shadow-v24 g-bg-white rounded g-py-40 g-px-30">
+                            <header class="text-center mb-4">
+                                <h2 class="h2 g-color-black g-font-weight-600">Trader Login</h2>
+                            </header>
+
+                            <!-- Form -->
+                            <form class="g-py-15"  method="POST" action="/">
+                                <input type="hidden" name="behavior" value="login_to_mqtt_server">
+
+                                <div class="mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">MQTT URL:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15"  type="text" id="url" value="">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">User Name:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" id="user" value="">
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="row justify-content-between">
+                                        <div class="col align-self-center">
+                                            <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Password:</label>
+                                        </div>
+
+                                    </div>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15 mb-3"  type="text" id="passwd" value="">
+
+                                </div>
+                                <div class="mb-4">
+                                    <div class="row justify-content-between ">
+                                        <a href="#" onclick="mqtt_login();" class="btn  btn-xxl btn-block u-btn-primary rounded g-py-13 g-px-100--xl text-center">Login</a>
+
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- End Form -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Login -->
+    </main>
+</div>
+
+
+<div id="prelogin" style="display: None">
+    <a href="#" onclick="return switch_div('verify');">Show verify_code</a>
+    <main>
+        <!-- Login -->
+        <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
+            <div class="container g-py-100">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-lg-5">
+                        <div class="u-shadow-v24 g-bg-white rounded g-py-40 g-px-30">
+                            <header class="text-center mb-4">
+                                <h2 class="h2 g-color-black g-font-weight-600">Get Verify Code</h2>
+                            </header>
+
+                            <!-- Form -->
+                            <form class="g-py-15"  method="POST" action="/">
+                                <input type="hidden" name="behavior" value="prelogin">
+                                <div class="row justify-content-center">
+                                    <a href="#" onclick="get_verify_code();" class="btn  btn-xxl btn-block u-btn-primary rounded g-py-13 g-px-100--xl text-center">Get</a>
+                                </div>
+                            </form>
+                            <!-- End Form -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Login -->
+    </main>
+</div>
+
+<div id="verify" style="display: None">
+    <a href="#" onclick="return switch_div('trader');">Show trader</a>
+    <main>
+    <!-- Login -->
+    <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
+        <div class="container g-py-100">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-lg-5">
+                    <div class="u-shadow-v24 g-bg-white rounded g-py-40 g-px-30">
+                        <header class="text-center mb-4">
+                            <h2 class="h2 g-color-black g-font-weight-600">Input Verify Code</h2>
+                        </header>
+
+                        <!-- Form -->
+                        <form class="g-py-15"  method="POST" action="/">
+                            <input type="hidden" name="behavior" value="login_with_verify_code">
+
+                            <div class="mb-4">
+                                <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Verify Code:</label>
+                                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15"  type="text" id="VCODE" value="">
+                            </div>
+
+
+                            <div class="mb-4">
+                                <div class="row justify-content-between ">
+                                    <a href="#" onclick="login_with_verify_code();" class="btn btn-xxl btn-block u-btn-primary rounded g-py-13 g-px-25">Submit</a>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <img src="blank.png" alt="vcode" id="verify_code">
+                            </div>
+                        </form>
+                        <!-- End Form -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Login -->
+</main>
+</div>
+
+<div id="trader" style="display: None">
+    <a href="#" onclick="return switch_div('mqtt_login');">Show mqtt_login</a>
+    <main>
+    <!-- Login -->
+    <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
+        <div class="container g-py-100">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-lg-5">
+                    <div class="u-shadow-v24 g-bg-white rounded g-py-40 g-px-30">
+
+
+
+                        <div class="card card-inverse bg-primary text-white rounded-0">
+                            <h3 class="card-header h5" id="status">
+                                <i class="fa fa-tasks g-font-size-default g-mr-5"></i>
+                                Connecting...
+                            </h3>
+
+                        </div>
+                        <!-- General Controls -->
+                        <form class="g-brd-around g-brd-gray-light-v4 g-pa-30">
+                            <div class="form-group">
+                                <label for="symbol">Symbol</label>
+                                <input type="text" class="form-control rounded-0 form-control-md" id="symbol" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="text" class="form-control rounded-0 form-control-md" id="price" >
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="quantity">Quantity</label>
+                                <input type="text" class="form-control rounded-0 form-control-md" id="quantity" >
+                            </div>
+
+                            <fieldset class="form-group">
+                                <legend class="g-font-size-default">Direction</legend>
+                                <div class="form-check btn btn-md u-btn-red">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input mr-1" name="directionRadios" id="directionRadios1" value="buy">Long(Buy)
+                                    </label>
+                                </div>
+                                <div class="form-check btn btn-md u-btn-teal">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input mr-1" name="directionRadios" id="directionRadios2" value="sell">Short(Sell)
+                                    </label>
+                                </div>
+
+                            </fieldset>
+                            <button onclick="submit_trade()" class="btn btn-md u-btn-primary rounded-0">Submit</button>
+                        </form>
+                        <!-- End General Controls -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Login -->
+</main>
+</div>
+<!-- JS Global Compulsory -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="assets/vendor/popper.min.js"></script>
+<script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+
+<!-- JS Unify -->
+<script src="assets/js/hs.core.js"></script>
+
+<!-- JS Customization -->
+<script src="assets/js/custom.js"></script>
+
+</body>
+</html>

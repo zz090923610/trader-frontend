@@ -8,7 +8,7 @@ import tornado.websocket
 
 live_web_sockets = set()
 URL = {"host": "127.0.0.1", "port": 1883}
-AUTH = {'username': "", 'password': ""}
+AUTH = {'username': "zz090923610", 'password': "90q9d3"}
 
 
 class StatusHdl:
@@ -23,6 +23,59 @@ class StatusHdl:
 
 
 STATUS_HDL = StatusHdl()
+
+
+class MQTTHdl:
+    def __init__(self):
+        self.client = mqtt.Client()
+        self.mqtt_topic_sub = "trade_res/#"
+        self.mqtt_topic_pub = "trade_req"
+        self.client.on_connect = self.mqtt_on_connect
+        self.client.on_message = self.mqtt_on_message
+        self.client.username_pw_set(AUTH['username'], AUTH['password'])
+
+    def mqtt_on_connect(self, mqttc, obj, flags, rc):
+        if type(self.mqtt_topic_sub) == list:
+            for t in self.mqtt_topic_sub:
+                mqttc.subscribe(t)
+        elif type(self.mqtt_topic_sub) == str:
+            mqttc.subscribe(self.mqtt_topic_sub)
+
+    def mqtt_on_message(self, mqttc, obj, msg):
+        topic = msg.topic
+        if topic == "trade_res/img":
+            with open("html/verify_code.png", "wb") as f:
+                f.write(msg.payload)
+        elif topic == "trade_res/str":
+            payload = msg.payload.decode('utf8')
+            print(payload)
+            if "alive" in payload:
+                return
+            (source, info) = payload.split("/", 1)
+            if source == "TradeDaemon":
+                (title, content) = info.split("_", 1)
+                if title == "heartbeat" and content == 'started':
+                    pass
+                elif title == "status":
+                    if content == "sleep":
+                        STATUS_HDL.status = "mqtt_active"
+                    elif content == "wait_verify_code":
+                        STATUS_HDL.status = "prelogin"
+                    elif content == "active":
+                        STATUS_HDL.status = "active"
+                        web_socket_send_message("active")
+            elif source == "TradeAPI":
+                if info == 'verify_image_sent':
+                    web_socket_send_message('verify_image_sent')
+                elif info == "login_success":
+                    web_socket_send_message("login_success")
+                elif "heartbeat_success" in info:
+                    web_socket_send_message("active")
+                elif "login_failed" in info:
+                    self.change_status("mqtt_active")
+
+
+MQTT_HDL = MQTTHdl()
 
 
 def simple_publish(topic, payload, host, port, auth=AUTH):
@@ -93,60 +146,13 @@ class MainHandler(tornado.web.RequestHandler):
     def __init__(self, application, request, **kwargs):
         super().__init__(application, request, **kwargs)
 
-        self.client = mqtt.Client()
-        self.mqtt_topic_sub = "trade_res/#"
-        self.mqtt_topic_pub = "trade_req"
-        self.client.on_connect = self.mqtt_on_connect
-        self.client.on_message = self.mqtt_on_message
-        self.client.username_pw_set(AUTH['username'], AUTH['password'])
-
-    def mqtt_on_connect(self, mqttc, obj, flags, rc):
-        if type(self.mqtt_topic_sub) == list:
-            for t in self.mqtt_topic_sub:
-                mqttc.subscribe(t)
-        elif type(self.mqtt_topic_sub) == str:
-            mqttc.subscribe(self.mqtt_topic_sub)
-
-    def mqtt_on_message(self, mqttc, obj, msg):
-        topic = msg.topic
-        if topic == "trade_res/img":
-            with open("html/verify_code.png", "wb") as f:
-                f.write(msg.payload)
-        elif topic == "trade_res/str":
-            payload = msg.payload.decode('utf8')
-            print(payload)
-            if "alive" in payload:
-                return
-            (source, info) = payload.split("/", 1)
-            if source == "TradeDaemon":
-                (title, content) = info.split("_", 1)
-                if title == "heartbeat" and content == 'started':
-                    pass
-                elif title == "status":
-                    if content == "sleep":
-                        STATUS_HDL.status = "mqtt_active"
-                    elif content == "wait_verify_code":
-                        STATUS_HDL.status = "prelogin"
-                    elif content == "active":
-                        STATUS_HDL.status = "active"
-                        web_socket_send_message("active")
-            elif source == "TradeAPI":
-                if info == 'verify_image_sent':
-                    web_socket_send_message('verify_image_sent')
-                elif info == "login_success":
-                    web_socket_send_message("login_success")
-                elif "heartbeat_success" in info:
-                    web_socket_send_message("active")
-                elif "login_failed" in info:
-                    self.change_status("mqtt_active")
-
     def login_to_mqtt_server(self, url, user, passwd):
         URL["host"] = url.split(":")[0]
         URL["port"] = int(url.split(":")[1])
         AUTH["username"] = user
         AUTH["password"] = passwd
-        self.client.connect(URL["host"], URL["port"], 60)
-        self.client.loop_start()
+        MQTT_HDL.client.connect(URL["host"], URL["port"], 60)
+        MQTT_HDL.client.loop_start()
         self.change_status("mqtt_active")
         simple_publish("trade_req", "status", URL["host"], URL["port"])
 
