@@ -1,6 +1,19 @@
 <html>
+<!-- JS Global Compulsory -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="assets/vendor/popper.min.js"></script>
+<script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+
+<!-- JS Unify -->
+<script src="assets/js/hs.core.js"></script>
+
+<!-- JS Customization -->
+<script src="assets/js/custom.js"></script>
+
 <head>
-<link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -22,8 +35,109 @@
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
 
-    <script>
+
+</head>
+
+
+<body>
+<div>
+    <table class="card card-inverse bg-primary text-white rounded-0 g-height-45" width="100%">
+    <tr>
+        <th width="95%" id="status"></th>
+        <th width="5%"><a href="#" onclick="server_stop();" class="btn btn-md u-btn-darkgray rounded-0 " id="server_sleep">Server Logout</a></th>
+        <th width="5%"><a href="#" onclick="disconnect_mqtt();" class="btn btn-md u-btn-darkgray rounded-0" id="disconnect">Disconnect</a></th>
+    </tr>
+
+
+</table>
+</div>
+
+ <script>
+
+
         var divs = ["mqtt_login", "prelogin", "verify", "trader"];
+        var active_page = "";
+        socket = new WebSocket('ws://127.0.0.1:8888/websocket');
+
+        socket.onmessage = function (evt)
+        {
+            var received_msg = evt.data;
+            console.log(received_msg);
+            set_info_bar(received_msg);
+            if (received_msg === "STATUS_MQTT_OFF"){
+                switch_div("mqtt_login");
+                document.getElementById("disconnect").style.display='none';
+                document.getElementById("server_sleep").style.display='none';
+            }
+            else if (received_msg === "STATUS_MQTT_CONNECTED"){
+                switch_div("prelogin");
+                document.getElementById("disconnect").style.display='block';
+            }
+            else if (received_msg === "TradeDaemon/status_sleep"){
+                if (active_page !== "prelogin"){
+                    switch_div("prelogin")   ;
+                }
+            }
+            else if (received_msg === "TradeDaemon/status_wait_verify_code"){
+                if (active_page !== "verify"){
+                    switch_div("verify")
+                }
+                console.log(document.getElementById("verify_code").src);
+                if (document.getElementById("verify_code").src.includes("blank.png")){
+                    resend_verify_code()
+                }
+            }
+            else if (received_msg === "verify_img_ready"){
+                document.getElementById("verify_code").src="verify_code.png";
+            }
+            else if (received_msg === "TradeAPI/login_success" || received_msg === "TradeDaemon/status_active"){
+                if (active_page !== "trader"){
+                    switch_div("trader");
+                    set_info_bar("Trader active");
+                    document.getElementById("server_sleep").style.display='block';
+                    get_cash()
+                }
+            }
+            else if (received_msg.includes("TradeAPI/cash")){
+                var str_args = received_msg.split("_");
+                document.getElementById("available_cash").innerHTML = "Available Cash: " + str_args[1];
+            }
+            else if (received_msg.includes("TradeAPI/login_failed")){
+                document.getElementById("verify_code").src="blank.png";
+            }
+
+        };
+
+
+
+
+        function set_info_bar( msg) {
+            if (msg === "TradeDaemon/status_active")
+            {
+
+            }
+            else if (msg === "TradeDaemon/status_sleep")
+            {
+
+            }
+            else if (msg === "TradeDaemon/status_wait_verify_code")
+            {
+
+            }
+            else if (msg.includes("TradeAPI/cash"))
+            {
+
+            }
+            else {
+                document.getElementById("status").innerHTML = msg;
+
+            }
+        }
+
+        function send_command(command) {
+            socket.send("trader_req/" + command)
+        }
+
         function switch_div(shown) {
             var div_len = divs.length;
             for (var i = 0; i < div_len; i++)
@@ -31,6 +145,7 @@
                 if(shown === divs[i])
                 {
                     document.getElementById(divs[i]).style.display='block';
+                    active_page = shown;
                 }
                 else
                 {
@@ -45,49 +160,75 @@
             var username = document.getElementById("user").value;
             var password = document.getElementById("passwd").value;
             var action_grps = [url, username, password];
-            var action_str = action_grps.join("_");
+            var action_str = "ACTION_MQTT_LOGIN_" + action_grps.join("_");
             console.log(action_str);
+            send_command(action_str);
         }
 
         function get_verify_code() {
-            console.log("ACTION_GET_VERIFY_CODE")
+            var action_str ="ACTION_GET_VERIFY_CODE";
+            console.log(action_str);
+            send_command(action_str);
 
         }
         function login_with_verify_code() {
             var v_code = document.getElementById("VCODE").value;
-            console.log("ACTION_SUBMIT_VERIFY_CODE");
-            console.log(v_code);
+            var action_str = "ACTION_SUBMIT_VERIFY_CODE_" + v_code;
+            console.log(action_str);
+            send_command(action_str);
+        }
+
+        function resend_verify_code() {
+            var action_str = "ACTION_RESEND_VERIFY_CODE";
+            console.log(action_str);
+            send_command(action_str);
         }
 
         function submit_trade() {
-        var radios = document.getElementsByName('directionRadios');
-        var direction = "None";
-        for (var i = 0, length = radios.length; i < length; i++)
-        {
-            if (radios[i].checked)
+            var radios = document.getElementsByName('directionRadios');
+            var direction = "None";
+            for (var i = 0, length = radios.length; i < length; i++)
             {
-                // do whatever you want with the checked radio
-                direction = radios[i].value;
+                if (radios[i].checked)
+                {
+                    // do whatever you want with the checked radio
+                    direction = radios[i].value;
 
-                // only one radio can be logically checked, don't check the rest
-                break;
+                    // only one radio can be logically checked, don't check the rest
+                    break;
+                }
             }
-        }
-        var symbol = document.getElementById("symbol").value;
-        var price = document.getElementById("price").value;
-        var quantity = document.getElementById("quantity").value;
-        var action_grps = [direction, symbol, price, quantity];
-        var action_str = action_grps.join("_");
-        //alert(action_str);
-        //socket.send("trade/" + action_str);
+            var symbol = document.getElementById("symbol").value;
+            var price = document.getElementById("price").value;
+            var quantity = document.getElementById("quantity").value;
+            var action_grps = [direction, symbol, price, quantity];
+            var action_str ="ACTION_TRADE_" + action_grps.join("_");
+            console.log(action_str);
+            send_command(action_str);
 
-    }
+        }
+
+        function get_cash(){
+            var action_str = "ACTION_GET_CASH";
+            console.log(action_str);
+            send_command(action_str);
+        }
+        function disconnect_mqtt() {
+            var action_str = "ACTION_MQTT_DISCONNECT";
+            console.log(action_str);
+            send_command(action_str);
+        }
+
+        function server_stop() {
+            var action_str = "ACTION_SERVER_STOP";
+            console.log(action_str);
+            send_command(action_str);
+        }
+
     </script>
-</head>
-<body>
 
 <div id="mqtt_login" style="display: block">
-    <a href="#" onclick="return switch_div('prelogin');">Show prelogin</a>
+    <!--  <a href="#" onclick="return switch_div('prelogin');">Show prelogin</a>-->
     <main>
         <!-- Login -->
         <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
@@ -143,7 +284,7 @@
 
 
 <div id="prelogin" style="display: None">
-    <a href="#" onclick="return switch_div('verify');">Show verify_code</a>
+    <!-- <a href="#" onclick="return switch_div('verify');">Show verify_code</a> -->
     <main>
         <!-- Login -->
         <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
@@ -174,123 +315,112 @@
 </div>
 
 <div id="verify" style="display: None">
-    <a href="#" onclick="return switch_div('trader');">Show trader</a>
+    <!--  <a href="#" onclick="return switch_div('trader');">Show trader</a> -->
     <main>
-    <!-- Login -->
-    <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
-        <div class="container g-py-100">
-            <div class="row justify-content-center">
-                <div class="col-sm-8 col-lg-5">
-                    <div class="u-shadow-v24 g-bg-white rounded g-py-40 g-px-30">
-                        <header class="text-center mb-4">
-                            <h2 class="h2 g-color-black g-font-weight-600">Input Verify Code</h2>
-                        </header>
+        <!-- Login -->
+        <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
+            <div class="container g-py-100">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-lg-5">
+                        <div class="u-shadow-v24 g-bg-white rounded g-py-40 g-px-30">
+                            <header class="text-center mb-4">
+                                <h2 class="h2 g-color-black g-font-weight-600">Input Verify Code</h2>
+                            </header>
 
-                        <!-- Form -->
-                        <form class="g-py-15"  method="POST" action="/">
-                            <input type="hidden" name="behavior" value="login_with_verify_code">
+                            <!-- Form -->
+                            <form class="g-py-15"  method="POST" action="/">
+                                <input type="hidden" name="behavior" value="login_with_verify_code">
 
-                            <div class="mb-4">
-                                <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Verify Code:</label>
-                                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15"  type="text" id="VCODE" value="">
-                            </div>
-
-
-                            <div class="mb-4">
-                                <div class="row justify-content-between ">
-                                    <a href="#" onclick="login_with_verify_code();" class="btn btn-xxl btn-block u-btn-primary rounded g-py-13 g-px-25">Submit</a>
+                                <div class="mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Verify Code:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15"  type="text" id="VCODE" value="">
+                                    <a href="#" onclick="resend_verify_code();" class="btn  rounded g-py-13 g-px-25">Refresh Code</a>
                                 </div>
-                            </div>
-                            <div class="mb-4">
-                                <img src="blank.png" alt="vcode" id="verify_code">
-                            </div>
-                        </form>
-                        <!-- End Form -->
 
+
+                                <div class="mb-4">
+                                    <div class="row justify-content-between ">
+                                        <a href="#" onclick="login_with_verify_code();" class="btn btn-xxl btn-block u-btn-primary rounded g-py-13 g-px-25">Submit</a>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <img src="blank.png" alt="vcode" id="verify_code">
+                                </div>
+                            </form>
+                            <!-- End Form -->
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End Login -->
-</main>
+        </section>
+        <!-- End Login -->
+    </main>
 </div>
 
 <div id="trader" style="display: None">
-    <a href="#" onclick="return switch_div('mqtt_login');">Show mqtt_login</a>
+    <!-- <a href="#" onclick="return switch_div('mqtt_login');">Show mqtt_login</a> -->
     <main>
-    <!-- Login -->
-    <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
-        <div class="container g-py-100">
-            <div class="row justify-content-center">
-                <div class="col-sm-8 col-lg-5">
-                    <div class="u-shadow-v24 g-bg-white rounded g-py-40 g-px-30">
+        <!-- Login -->
+        <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
+            <div class="container g-py-100">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-lg-5">
+                        <div class="u-shadow-v24 g-bg-white rounded g-py-40 g-px-30">
+
+                            <div class="card card-inverse bg-primary text-white rounded-0">
+                                <h3 class="card-header h5" id="available_cash">
+                                    <i class="fa fa-tasks g-font-size-default g-mr-5"></i>
+                                    Available Cash:
+                                </h3>
+
+                            </div>
 
 
+                            <!-- General Controls -->
+                            <form class="g-brd-around g-brd-gray-light-v4 g-pa-30">
+                                <div class="form-group">
+                                    <label for="symbol">Symbol</label>
+                                    <input type="text" class="form-control rounded-0 form-control-md" id="symbol" >
+                                </div>
 
-                        <div class="card card-inverse bg-primary text-white rounded-0">
-                            <h3 class="card-header h5" id="status">
-                                <i class="fa fa-tasks g-font-size-default g-mr-5"></i>
-                                Connecting...
-                            </h3>
+                                <div class="form-group">
+                                    <label for="price">Price</label>
+                                    <input type="text" class="form-control rounded-0 form-control-md" id="price" >
+                                </div>
+
+                                <div class="form-group ">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="text" class="form-control rounded-0 form-control-md" id="quantity" >
+                                </div>
+
+                                <fieldset class="form-group">
+                                    <legend class="g-font-size-default">Direction</legend>
+                                    <div class="form-check btn btn-md u-btn-red">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input mr-1" name="directionRadios" id="directionRadios1" value="buy">Long(Buy)
+                                        </label>
+                                    </div>
+                                    <div class="form-check btn btn-md u-btn-teal">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input mr-1" name="directionRadios" id="directionRadios2" value="sell">Short(Sell)
+                                        </label>
+                                    </div>
+
+                                </fieldset>
+                                <a href="#" onclick="submit_trade();" class="btn btn-md u-btn-primary rounded-0">Submit</a>
+                            </form>
+                            <!-- End General Controls -->
+
 
                         </div>
-                        <!-- General Controls -->
-                        <form class="g-brd-around g-brd-gray-light-v4 g-pa-30">
-                            <div class="form-group">
-                                <label for="symbol">Symbol</label>
-                                <input type="text" class="form-control rounded-0 form-control-md" id="symbol" >
-                            </div>
-
-                            <div class="form-group">
-                                <label for="price">Price</label>
-                                <input type="text" class="form-control rounded-0 form-control-md" id="price" >
-                            </div>
-
-                            <div class="form-group ">
-                                <label for="quantity">Quantity</label>
-                                <input type="text" class="form-control rounded-0 form-control-md" id="quantity" >
-                            </div>
-
-                            <fieldset class="form-group">
-                                <legend class="g-font-size-default">Direction</legend>
-                                <div class="form-check btn btn-md u-btn-red">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input mr-1" name="directionRadios" id="directionRadios1" value="buy">Long(Buy)
-                                    </label>
-                                </div>
-                                <div class="form-check btn btn-md u-btn-teal">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input mr-1" name="directionRadios" id="directionRadios2" value="sell">Short(Sell)
-                                    </label>
-                                </div>
-
-                            </fieldset>
-                            <button onclick="submit_trade()" class="btn btn-md u-btn-primary rounded-0">Submit</button>
-                        </form>
-                        <!-- End General Controls -->
-
-
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End Login -->
-</main>
+        </section>
+        <!-- End Login -->
+    </main>
 </div>
-<!-- JS Global Compulsory -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-<script src="assets/vendor/popper.min.js"></script>
-<script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-
-<!-- JS Unify -->
-<script src="assets/js/hs.core.js"></script>
-
-<!-- JS Customization -->
-<script src="assets/js/custom.js"></script>
 
 </body>
 </html>
