@@ -1,9 +1,6 @@
 import os
-import threading
 
 import paho.mqtt.client as mqtt
-import paho.mqtt.publish as s_publish
-import time
 import tornado.ioloop
 import tornado.web
 import tornado.websocket

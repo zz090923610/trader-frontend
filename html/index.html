@@ -57,7 +57,8 @@
 
         var divs = ["mqtt_login", "prelogin", "verify", "trader"];
         var active_page = "";
-        socket = new WebSocket('ws://127.0.0.1:8888/websocket');
+        var ws_addr = "ws://" + location.host + "/websocket";
+        socket = new WebSocket(ws_addr);
 
         socket.onmessage = function (evt)
         {
