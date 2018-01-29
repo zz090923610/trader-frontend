@@ -231,6 +231,14 @@
 <div id="mqtt_login" style="display: block">
     <!--  <a href="#" onclick="return switch_div('prelogin');">Show prelogin</a>-->
     <main>
+        <!-- <script>
+            $('body').on('keypress', 'input', function(args) {
+            if (args.keyCode === 13) {
+                $("#login_button").click();
+                return false;
+            }
+        });
+        </script> -->
         <!-- Login -->
         <section class="g-min-height-100vh g-flex-centered g-bg-lightblue-radialgradient-circle">
             <div class="container g-py-100">
@@ -267,7 +275,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <div class="row justify-content-between ">
-                                        <a href="#" onclick="mqtt_login();" class="btn  btn-xxl btn-block u-btn-primary rounded g-py-13 g-px-100--xl text-center">Login</a>
+                                        <a href="#" onclick="mqtt_login();" class="btn  btn-xxl btn-block u-btn-primary rounded g-py-13 g-px-100--xl text-center" id="login_button">Login</a>
 
                                     </div>
                                 </div>
