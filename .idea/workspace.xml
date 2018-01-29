@@ -2,12 +2,457 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f88a5c32-294f-43ba-8057-d2f1546f7636" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/trader-frontend.iml" afterPath="$PROJECT_DIR$/.idea/trader-frontend.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/html/assets/css/custom.css" afterPath="$PROJECT_DIR$/html/assets/css/custom.css" />
-      <change beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
-      <change beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
+      <change beforePath="$PROJECT_DIR$/html/mqtt_login.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/html/prelogin.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/html/trader.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/html/verify_code.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/hw.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/leven" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mqtt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mqtt_pub" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mqtt_sub" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/coverage.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/lcov-report/async-throttle/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/lcov-report/async-throttle/index.js.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/lcov-report/base.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/lcov-report/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/lcov-report/prettify.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/lcov-report/prettify.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/lcov-report/sort-arrow-sprite.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/lcov-report/sorter.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/coverage/lcov.info" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/async-limiter/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/LICENSE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bl/.jshintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bl/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bl/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bl/LICENSE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bl/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bl/bl.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bl/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bl/test/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/brace-expansion/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/brace-expansion/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/brace-expansion/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/callback-stream/.jshintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/callback-stream/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/callback-stream/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/callback-stream/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/callback-stream/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/callback-stream/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/callback-stream/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/commist/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/commist/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/commist/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/commist/example.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/commist/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/commist/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/commist/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-map/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-map/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-map/README.markdown" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-map/example/map.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-map/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-map/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-map/test/map.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/float.patch" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/duplexify/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/duplexify/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/duplexify/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/duplexify/example.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/duplexify/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/duplexify/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/duplexify/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/end-of-stream/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/end-of-stream/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/end-of-stream/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/end-of-stream/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/.eslintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/.jscs.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/CHANGELOG.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/component.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/extend/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fs.realpath/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fs.realpath/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fs.realpath/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fs.realpath/old.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fs.realpath/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-stream/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-stream/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-stream/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-stream/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-stream/readable.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob/changelog.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob/common.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob/glob.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob/sync.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/doc/hello.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/doc/help.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/example.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/fixture/basic/hello.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/fixture/basic/help.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/fixture/dir/a/b.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/fixture/no-ext/hello" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/fixture/shortnames/abcde fghi lmno.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/fixture/shortnames/abcde hello.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/fixture/shortnames/hello world.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/help-me.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/help-me/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inflight/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inflight/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inflight/inflight.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inflight/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/inherits.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/inherits_browser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-absolute/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-absolute/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-absolute/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-absolute/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-extglob/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-extglob/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-extglob/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-extglob/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-glob/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-glob/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-glob/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-glob/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-negated-glob/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-negated-glob/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-negated-glob/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-negated-glob/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-relative/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-relative/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-relative/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-relative/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-unc-path/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-unc-path/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-unc-path/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-unc-path/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-windows/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-windows/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-windows/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/is-windows/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/isarray/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/isarray/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/isarray/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/isarray/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/isarray/component.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/isarray/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/isarray/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/isarray/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/example/key_cmp.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/example/nested.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/example/str.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/example/value_cmp.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/readme.markdown" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/test/cmp.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/test/nested.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/test/replacer.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/test/space.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/test/str.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json-stable-stringify/test/to-json.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jsonify/README.markdown" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jsonify/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jsonify/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jsonify/test/parse.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jsonify/test/stringify.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/leven/cli.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/leven/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/leven/license" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/leven/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/leven/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimatch/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimatch/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimatch/minimatch.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimatch/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/example/parse.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/readme.markdown" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/all_bool.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/bool.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/dash.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/default_bool.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/dotted.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/kv_short.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/long.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/num.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/parse.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/parse_modified.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/short.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/stop_early.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/unknown.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/test/whitespace.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/CONTRIBUTING.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/LICENSE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/benchmarks/generate.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/benchmarks/generateNet.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/benchmarks/parse.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/benchmarks/writeToStream.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/constants.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/generate.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/mqtt.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/numbers.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/packet.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/parser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/testRandom.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt-packet/writeToStream.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/CONTRIBUTING.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/LICENSE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/bin/pub.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/bin/sub.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/doc/help.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/doc/publish.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/doc/subscribe.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/client/secure-client.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/client/simple-both.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/client/simple-publish.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/client/simple-subscribe.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/tls client/crt.ca.cg.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/tls client/mqttclient.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/tls client/tls-cert.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/tls client/tls-key.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/wss/client.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/examples/wss/client_with_proxy.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/mqtt.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/abstract_client.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/abstract_store.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/browser/server.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/browser/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/browser/wx.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/client.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/private-csr.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/private-key.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/public-cert.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/public-key.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/server.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/server_process.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/tls-cert.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/tls-csr.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/tls-key.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/wrong-cert.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/wrong-csr.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/helpers/wrong-key.pem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/mocha.opts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/mqtt.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/mqtt_store.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/secure_client.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/server.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/store.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/typescript/broker-connect-subscribe-and-publish.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/typescript/broker-connect-subscribe-and-publish.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/typescript/broker-connect-subscribe-and-publish.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/typescript/tsconfig.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/util.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/test/websocket_client.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mqtt/types/index.d.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/once/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/once/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/once/once.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/once/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ordered-read-streams/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ordered-read-streams/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ordered-read-streams/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ordered-read-streams/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-dirname/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-dirname/license" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-dirname/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-dirname/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-is-absolute/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-is-absolute/license" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-is-absolute/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-is-absolute/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/process-nextick-args/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/process-nextick-args/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/process-nextick-args/license.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/process-nextick-args/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/process-nextick-args/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/process-nextick-args/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pump/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pump/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pump/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pump/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pump/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pump/test-browser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pump/test-node.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pumpify/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pumpify/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pumpify/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pumpify/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pumpify/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pumpify/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/CONTRIBUTING.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/GOVERNANCE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/duplex-browser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/duplex.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/passthrough.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/readable-browser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/readable.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/transform.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/writable-browser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/writable.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/reinterval/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/reinterval/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/reinterval/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/reinterval/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/reinterval/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/reinterval/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/reinterval/tests/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/remove-trailing-separator/history.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/remove-trailing-separator/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/remove-trailing-separator/license" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/remove-trailing-separator/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/remove-trailing-separator/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/safe-buffer/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/safe-buffer/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/safe-buffer/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/safe-buffer/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/safe-buffer/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/safe-buffer/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/split2/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/split2/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/split2/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/split2/bench.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/split2/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/split2/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/split2/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/stream-shift/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/stream-shift/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/stream-shift/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/stream-shift/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/stream-shift/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/stream-shift/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/stream-shift/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string_decoder/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string_decoder/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string_decoder/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string_decoder/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/through2-filter/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/through2-filter/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/through2-filter/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/through2/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/through2/LICENSE.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/through2/LICENSE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/through2/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/through2/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/through2/through2.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/to-absolute-glob/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/to-absolute-glob/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/to-absolute-glob/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/to-absolute-glob/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/typedarray/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/typedarray/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/typedarray/example/tarray.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/typedarray/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/typedarray/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/typedarray/readme.markdown" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/typedarray/test/server/undef_globals.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/typedarray/test/tarray.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ultron/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ultron/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ultron/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ultron/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unc-path-regex/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unc-path-regex/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unc-path-regex/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unc-path-regex/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unique-stream/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unique-stream/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unique-stream/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unique-stream/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/util-deprecate/History.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/util-deprecate/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/util-deprecate/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/util-deprecate/browser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/util-deprecate/node.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/util-deprecate/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/collaborators.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/echo-server.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/server.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/stream.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/test-client.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/test-server.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-stream/ws-fallback.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wrappy/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wrappy/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wrappy/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wrappy/wrappy.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ws/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ws/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ws/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ws/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xtend/.jshintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xtend/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xtend/LICENCE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xtend/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xtend/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xtend/immutable.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xtend/mutable.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xtend/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xtend/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +466,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
+            <state relative-caret-position="0">
               <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -38,24 +483,14 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+            <state relative-caret-position="108">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#5020#5283#0" expanded="false" />
                 <element signature="e#5337#5588#0" expanded="false" />
                 <element signature="e#5611#5891#0" expanded="false" />
                 <element signature="e#5925#6006#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hw.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="174" column="8" lean-forward="true" selection-start-line="174" selection-start-column="8" selection-end-line="177" selection-end-column="16" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -110,9 +545,6 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
     <option name="y" value="25" />
@@ -137,6 +569,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,7 +587,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -193,27 +625,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12196438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -230,6 +661,42 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+          <folding>
+            <element signature="e#5020#5283#0" expanded="false" />
+            <element signature="e#5337#5588#0" expanded="false" />
+            <element signature="e#5611#5891#0" expanded="false" />
+            <element signature="e#5925#6006#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="174" column="8" lean-forward="true" selection-start-line="174" selection-start-column="8" selection-end-line="177" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/trader.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -363,15 +830,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="174" column="8" lean-forward="true" selection-start-line="174" selection-start-column="8" selection-end-line="177" selection-end-column="16" />
+        <state relative-caret-position="3024">
+          <caret line="174" column="8" lean-forward="false" selection-start-line="174" selection-start-column="8" selection-end-line="177" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
+        <state relative-caret-position="0">
           <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -384,10 +851,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+        <state relative-caret-position="108">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#5020#5283#0" expanded="false" />
             <element signature="e#5337#5588#0" expanded="false" />
